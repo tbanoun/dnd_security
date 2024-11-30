@@ -22,9 +22,14 @@ class ResPartner(models.Model):
 
     def create(self, vals_list):
         # check user has privilage admin
-        admin = checkUserHasGroup(self, 'dnd_security.admin_group_contact')
-        if not admin: vals_list['active'] = False
-        else: vals_list['active'] = True
+        try:
+            admin = checkUserHasGroup(self, 'dnd_security.admin_group_contact')
+            if not admin:
+                vals_list['active'] = False
+                vals_list['user_id'] = self.env.user.id
+            else: vals_list['active'] = True
+        except Exception as e:
+            print(e)
         res = super(ResPartner, self).create(vals_list)
         return res
 

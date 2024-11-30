@@ -12,6 +12,7 @@
         'security/security_group.xml',
         'security/security_rule_admin.xml',
         'security/security_rule_user.xml',
+        'security/generale_ir_rule.xml',
         # views
         'views/res_partner.xml',
         'views/main_menu.xml',
