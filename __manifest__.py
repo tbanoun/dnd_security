@@ -13,6 +13,7 @@
         'security/security_rule_admin.xml',
         'security/security_rule_user.xml',
         'security/generale_ir_rule.xml',
+        'security/security_rule_team_leader.xml',
         # views
         'views/res_partner.xml',
         'views/main_menu.xml',

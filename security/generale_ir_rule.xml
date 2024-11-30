@@ -7,6 +7,7 @@
         <delete model="ir.rule" id="base.res_partner_portal_public_rule"/>
         <delete model="ir.rule" id="base.res_partner_rule"/>
         <delete model="ir.rule" id="crm.crm_rule_all_lead"/>
+        <delete model="ir.rule" id="website_crm_partner_assign.assigned_lead_portal_rule_1"/>
 
         <!--restrict access partner simple user-->
         <record id="rule_access_restrict_res_partner"
