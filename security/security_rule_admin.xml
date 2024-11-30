@@ -12,5 +12,20 @@
                    eval="[(4, ref('dnd_security.admin_group_contact'))]"/>
         </record>
 
+        <!--        -->
+        <record id="user_groups_view" model="ir.ui.view">
+            <field name="name">res.users.groups</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <!-- dummy, will be modified by groups -->
+                <xpath expr="//field[@name='login']" position="after">
+                    <field name="crm_team_ids" widget="many2many_tags"/>
+                    <field name="sale_team_id"/>
+                    <field name="team_id"/>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </odoo>

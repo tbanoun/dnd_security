@@ -41,7 +41,8 @@
             <!--            ('partner_id.team_id', '=', user.crm_team_ids.ids)-->
             <!--            ('user_id', '=', user.crm_team_ids.crm_team_member_ids.ids)-->
             <field name="domain_force">
-                ['|', ('user_id', '=', user.id)
+                ['|', ('user_id.team_id', '=', user.team_id.id),
+                ('partner_id.team_id', '=', user.team_id.id)
                 ]
             </field>
             <field name="groups"
