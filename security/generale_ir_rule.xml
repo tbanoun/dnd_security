@@ -8,6 +8,9 @@
         <delete model="ir.rule" id="base.res_partner_rule"/>
         <delete model="ir.rule" id="crm.crm_rule_all_lead"/>
         <delete model="ir.rule" id="website_crm_partner_assign.assigned_lead_portal_rule_1"/>
+        <delete model="ir.rule" id="crm.crm_rule_all_lead"/>
+        <delete model="ir.rule" id="crm.crm_rule_personal_lead"/>
+        <delete model="ir.rule" id="crm.crm_lead_company_rule"/>
 
         <!--restrict access partner simple user-->
         <record id="rule_access_restrict_res_partner"
@@ -61,17 +64,6 @@
             </field>
             <field name="groups"
                    eval="[(4, ref('base.group_user'))]"/>
-        </record>
-
-        <!--make access crm_lead admin-->
-        <record id="rule_salesperson_crm_lead"
-                model="ir.rule">
-            <field name="name">Salesperson - Current Customers</field>
-            <field name="model_id" ref="crm.model_crm_lead"/>
-            <field name="domain_force">[]
-            </field>
-            <field name="groups"
-                   eval="[(4, ref('base.group_system'))]"/>
         </record>
 
         <!--restrict access hr_employee user-->
