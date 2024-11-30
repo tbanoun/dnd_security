@@ -23,8 +23,17 @@ class ResPartner(models.Model):
     def create(self, vals_list):
         # check user has privilage admin
         try:
+            user_id = self.env.user.id
+            print("ok")
+            partner_id = self.env['res.partner'].sudo().search(
+                [('user_id', '=', user_id)])
+            print("JA",partner_id)
             admin = checkUserHasGroup(self, 'dnd_security.admin_group_contact')
             if not admin:
+                team_id = None
+                if partner_id:
+                    team_id = partner_id[0].team_id.id
+                    if team_id: vals_list['team_id'] = team_id
                 vals_list['active'] = False
                 vals_list['user_id'] = self.env.user.id
             else: vals_list['active'] = True
