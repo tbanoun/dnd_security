@@ -11,6 +11,7 @@
         <record id="team_leader_group_contact" model="res.groups">
             <field name="name">Chef d'équipe</field>
             <field name="category_id" ref="dnd_security.module_category_contact"/>
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
         <record id="admin_group_contact" model="res.groups">
