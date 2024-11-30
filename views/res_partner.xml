@@ -49,6 +49,19 @@
         </record>
         <!--end tree view-->
         <!--form view-->
+        <!--replace wigdet archive with en attente-->
+        <record id="view_partner_form_request_cration_first" model="ir.ui.view">
+            <field name="name">res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority" eval="99"/>
+            <field name="arch" type="xml">
+                <xpath expr="//widget[@name='web_ribbon']" position="replace">
+                    <widget name="web_ribbon" title="En attente" bg_color="text-bg-danger" invisible="active"/>
+                </xpath>
+            </field>
+        </record>
+        <!--end replace-->
         <record id="view_partner_form_request_cration" model="ir.ui.view">
             <field name="name">res.partner.form</field>
             <field name="model">res.partner</field>
