@@ -7,7 +7,12 @@
     "website": "https://dndconsulting.dz/",
     "depends": ["simplify_access_management", "contacts_dnd"],
     "data": [
+        # security
         'security/ir.model.access.csv',
+        'security/security_group.xml',
+        'security/security_rule_admin.xml',
+        'security/security_rule_user.xml',
+        # views
         'views/res_partner.xml',
         'views/main_menu.xml',
     ],

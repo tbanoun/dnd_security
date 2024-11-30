@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <odoo>
     <data>
-                <!--                  groups="base.group_user,base.group_partner_manager"-->
-
         <!--Menu principal d'acess pour la page de demende de creation-->
         <menuitem name="Demande de création"
                   id="menu_request_creation"

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+
+        <!-- Category -->
+        <record model="ir.module.category" id="module_category_contact">
+            <field name="name">Contact</field>
+        </record>
+
+        <!-- Groups -->
+        <record id="users_group_contact" model="res.groups">
+            <field name="name">Utilisateur</field>
+            <field name="category_id" ref="dnd_security.module_category_contact"/>
+        </record>
+
+        <record id="admin_group_contact" model="res.groups">
+            <field name="name">Administrateur</field>
+            <field name="category_id" ref="dnd_security.module_category_contact"/>
+            <field name="implied_ids" eval="[(4, ref('dnd_security.users_group_contact'))]"/>
+        </record>
+
+
+        <!--delete default rule form module contact-->
+        <delete model="ir.rule" id="base.res_partner_portal_public_rule"/>
+        <delete model="ir.rule" id="base.res_partner_rule"/>
+    </data>
+</odoo>

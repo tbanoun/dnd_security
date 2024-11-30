@@ -38,9 +38,11 @@
 
                     <button name="action_confirm" class="btn btn-primary" string="Confirmer" type="object"
                             confirm="Êtes-vous sûr de vouloir confirmer la création de ce contact ?"
+                            groups="dnd_security.admin_group_contact"
                             icon="fa-check"/>
                     <button name="action_cancel" class="btn btn-danger" string="Supprimer" type="object"
                             confirm="Êtes-vous certain de vouloir supprimer ce contact ?"
+                            groups="dnd_security.admin_group_contact"
                             icon="fa-trash"/>
                 </tree>
             </field>
@@ -65,10 +67,12 @@
                 <xpath expr="//sheet" position="before">
                     <header>
                         <button name="action_confirm"
+                                groups="dnd_security.admin_group_contact"
                                 confirm="Êtes-vous sûr de vouloir confirmer la création de ce contact ?"
                                 class="btn btn-primary mr-3" string="Confirmer"
                                 type="object" icon="fa-check"/>
                         <button name="action_cancel" style="margin-left: 20px !important;"
+                                groups="dnd_security.admin_group_contact"
                                 confirm="Êtes-vous certain de vouloir supprimer ce contact ?"
                                 class="ml-2 btn btn-danger
                                     ml-3" string="Supprimer" type="object"
